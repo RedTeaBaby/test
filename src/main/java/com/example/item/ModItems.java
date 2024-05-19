@@ -1,26 +1,43 @@
 package com.example.item;
 
 
-import com.example.item.ModItems;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-
 import net.minecraft.util.Identifier;
 
+
+
 public class ModItems  {
-    public static final Item BLACKTEA = new Item(new FabricItemSettings());//注册物品
+    public static final Item REINFORCEDCRYSTAL_CHESTPLATE = registerItem("reinforcedcrystal_chestplate",new Item(new FabricItemSettings()));//注册物品
+
+    public static final Item REINFORCEDCRYSTAL_HELMET =registerItem("reinforcedcrystal_helmet",new Item(new FabricItemSettings()));
+
+    public static final Item REINFORCEDCRYSTAL_LEGGINGS = registerItem("reinforcedcrystal_leggings",new Item(new FabricItemSettings()));
+
+    public static final Item REINFORCEDCRYSTAL_BOOTS = registerItem("reinforcedcrystal_boots",new Item(new FabricItemSettings()));
+
 
     public static void  init() {
-        Registry.register(Registries.ITEM, new Identifier("abode", "blacktea"),BLACKTEA);//将物品写入注册表
-                ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content ->
-                        content.add(BLACKTEA));//放入创造物品栏
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems:: registerItemToGroup);//放入创造物品栏
+
 
     }
+    public  static Item registerItem(String name,Item item){
+        return Registry.register(Registries.ITEM,new Identifier("abode",name),item);
 
+
+    }
+    public static void registerItemToGroup(FabricItemGroupEntries entries){
+        entries.add(REINFORCEDCRYSTAL_CHESTPLATE);
+        entries.add(REINFORCEDCRYSTAL_HELMET);
+        entries.add(REINFORCEDCRYSTAL_LEGGINGS);
+        entries.add(REINFORCEDCRYSTAL_BOOTS);
+
+    }
 
     }
