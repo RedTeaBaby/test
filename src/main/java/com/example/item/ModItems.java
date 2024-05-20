@@ -28,7 +28,7 @@ public class ModItems  {
 
     public static void  init() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems:: ArmorItemToGroup);//将装备组放入物品栏
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INVENTORY).register(ModItems:: MaterialItemToGroup);//将材料组放入物品栏
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems:: MaterialItemToGroup);//将材料组放入物品栏
 
 
     }
