@@ -15,7 +15,7 @@ public class AbodeMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-//我怀疑是主类的问题，望帮忙查找，我实在找不到了QAQ
+//我怀疑是主类的问题，望帮忙查找，我实在找不到了QAQ，有空帮忙看看吧！！
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
