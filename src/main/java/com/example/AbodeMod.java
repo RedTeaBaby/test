@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.material.CustomArmorMaterial;
+import com.example.item.reinforcedcrystal;
 import com.example.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -21,9 +21,9 @@ public class AbodeMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+		ModItems.register();
 		ModItems.init();
-
-    }
+	}
 
 
 

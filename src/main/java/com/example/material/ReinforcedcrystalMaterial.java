@@ -9,7 +9,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 //盔甲效果--按照Wiki给的模板写的，抛开数据平衡不谈，暂时没能找到问题
 
-public class CustomArmorMaterial implements ArmorMaterial {
+public class ReinforcedcrystalMaterial implements ArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
     private static final int[] PROTECTION_VALUES = new int[] {5, 6, 8, 4};
 
@@ -19,7 +19,7 @@ public class CustomArmorMaterial implements ArmorMaterial {
     }
 
     public int method_7697(EquipmentSlot slot) {
-        return PROTECTION_VALUES[slot.getEntitySlotId()];
+        return PROTECTION_VALUES[slot.getEntitySlotId()]* 40;
     }
 
 
@@ -44,7 +44,7 @@ public class CustomArmorMaterial implements ArmorMaterial {
 
 
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(ModItems.REINFORCEDCRYSTAL_CRYSTAL);
+        return Ingredient.ofItems(ModItems.REINFORCEDCRYSTAL);
     }
 
 
